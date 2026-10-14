@@ -16,6 +16,18 @@
 ```bash
 /run.sh "pip install jupyterlab" "jupyter lab --ip=0.0.0.0 --no-browser --allow-root --NotebookApp.base_url=/${RUNAI_PROJECT}/${RUNAI_JOB_NAME} --NotebookApp.token='' --notebook-dir=/"
 ```
+
+用系統管理員身分開 cmd（開始選單搜尋 cmd → 右鍵 →「以系統管理員身分執行」），執行：
+
+
+```bash
+echo 10.225.0.59 runai.tpe1.local >> C:\Windows\System32\drivers\etc\hosts
+ipconfig /flushdns
+```
+然後回到一般的 cmd，再跑一次 watch.bat --once，這樣就會通了。
+
+
+
 ```bash
 cd /d C:\Users\USER\Downloads
 watch.bat --once
