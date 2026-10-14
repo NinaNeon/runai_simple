@@ -20,3 +20,8 @@
 cd /d C:\Users\USER\Downloads
 watch.bat --once
 ```
+```bash
+cd /workspace/wafercap
+nohup python3 gpu_hold_all.py > hold.log 2>&1 &
+sleep 8; cat hold.log; nvidia-smi
+```
