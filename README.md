@@ -56,3 +56,36 @@ pkill -9 -f gpu_hold_all.py
 cd /workspace/wafercap
 nohup python3 gpu_hold_all.py > hold.log 2>&1 &
 ```
+PS C:\Users\USER> ssh nina1031@nano4.nchc.org.tw
+(nina1031@nano4.nchc.org.tw) Please select the 2FA login method.
+1. Mobile APP OTP
+2. Mobile APP PUSH
+3. Email OTP
+Login method: 1
+(nina1031@nano4.nchc.org.tw) Password:
+(nina1031@nano4.nchc.org.tw) OTP: 682936
+Register this system with Red Hat Insights: rhc connect
+
+Example:
+# rhc connect --activation-key <key> --organization <org>
+
+The rhc client and Red Hat Insights will enable analytics and additional
+management capabilities on your system.
+View your connected systems at https://console.redhat.com/insights
+
+You can learn more about how to register your system
+using rhc at https://red.ht/registration
+Last login: Fri Oct  9 11:49:56 2026 from 140.110.109.164
+[nina1031@25a-lgn02 ~]$ sacct -j 518883 --format=JobID,NodeList,Elapsed,State
+JobID               NodeList    Elapsed      State
+------------ --------------- ---------- ----------
+518883           25a-hgpn007   00:21:07  COMPLETED
+518883.batch     25a-hgpn007   00:21:07  COMPLETED
+518883.exte+     25a-hgpn007   00:21:08  COMPLETED
+[nina1031@25a-lgn02 ~]$ cd /work/nina1031/tiny
+ls
+run20-518847.out  run20-518860.out  run20.sh         tiny-518839.out  tiny.sh         train_tiny.py
+run20-518858.out  run20-518883.out  tiny-518838.out  tiny_ckpt.pt     train_20min.py
+timed out waiting for input: auto-logout
+Connection to nano4.nchc.org.tw closed.
+PS C:\Users\USER>
