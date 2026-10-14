@@ -37,3 +37,22 @@ cd /workspace/wafercap
 nohup python3 gpu_hold_all.py > hold.log 2>&1 &
 sleep 8; cat hold.log; nvidia-smi
 ```
+直接 kill 掉佔位程式：
+
+```bash
+kill $(cat ~/.gpu_hold.pid)
+sleep 2; nvidia-smi
+```
+nvidia-smi 的顯存回到幾 MiB、下面的 Processes 顯示 No running processes，就代表 GPU 已經空出來了，可以直接跑你的東西。
+
+如果 kill 之後顯存沒有釋放，就用強制關閉的方式：
+
+```bash
+pkill -9 -f gpu_hold_all.py
+```
+工作做完要再佔回去時：
+
+```bash
+cd /workspace/wafercap
+nohup python3 gpu_hold_all.py > hold.log 2>&1 &
+```
