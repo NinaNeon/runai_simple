@@ -15,7 +15,8 @@
 
 ```bash
 /run.sh "pip install jupyterlab" "jupyter lab --ip=0.0.0.0 --no-browser --allow-root --NotebookApp.base_url=/${RUNAI_PROJECT}/${RUNAI_JOB_NAME} --NotebookApp.token='' --notebook-dir=/"
-
+```
 ```bash
 cd /d C:\Users\USER\Downloads
 watch.bat --once
+```
